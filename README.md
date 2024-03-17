@@ -1,2 +1,6 @@
-# install_lightweb
-Install LightWeb Repo
+# install LightWeb
+Execute the following line to install and deploy LightWeb 3.0
+```
+curl -s https://github.com/ruvenss/install_lightweb/deploy_lightweb.sh
+```
+
