@@ -20,10 +20,9 @@ fi
 echo "Installing LightWeb in $platform ..."
 echo "____________________________________"
 echo " Downloading LightWeb ...      | ⬇️ |"
-curl "https://github.com/ruvenss/lightweb/archive/refs/heads/master.zip" -o lightweb.zip
+wget -q https://github.com/ruvenss/lightweb/archive/refs/tags/3.0.0.zip -O "lightweb.zip" && unzip -qq ./"lightweb.zip" && rm ./"lightweb.zip"
 echo " Unzipping LightWeb ...        | 🗜️ |"
-unzip lightweb.zip
 echo " Deploying at $domain          | ⬆️ |"
-sudo mv lightweb-master $domain
+sudo mv lightweb-3.0.0 $domain
 echo " Installing LightWeb ...       | ✅ |"
 chmod 777 $domain
