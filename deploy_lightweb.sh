@@ -2,7 +2,8 @@
 clear
 echo "Staging Domain:"
 read domain
-echo "Installing LightWeb in $platform ..."
+mkdir -p $domain
+
 platform='unknown'
 unamestr=$(uname)
 if [[ "$unamestr" == 'Linux' ]]; then
@@ -16,13 +17,13 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
    platform='macosx'
    brew install shc
 fi
-
+echo "Installing LightWeb in $platform ..."
 echo "____________________________________"
 echo " Downloading LightWeb ...      | ⬇️ |"
 curl "https://github.com/ruvenss/lightweb/archive/refs/heads/master.zip" -o lightweb.zip
 echo " Unzipping LightWeb ...        | 🗜️ |"
 unzip lightweb.zip
-echo " Compiling LightWeb ...        | ⬆️ |"
-shc -f lightweb-master/lightweb.sh
-echo " Installing LightWeb ...       | ⬆️ |"
-sudo mv lightweb-master/lightweb /usr/local/bin
+echo " Deploying at $domain          | ⬆️ |"
+sudo mv lightweb-master $domain
+echo " Installing LightWeb ...       | ✅ |"
+chmod 777 $domain
