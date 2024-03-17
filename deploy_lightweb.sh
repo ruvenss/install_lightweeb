@@ -1,5 +1,8 @@
 #!/bin/bash
 clear
+echo "Staging Domain:"
+read domain
+echo "Installing LightWeb in $platform ..."
 platform='unknown'
 unamestr=$(uname)
 if [[ "$unamestr" == 'Linux' ]]; then
@@ -13,7 +16,7 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
    platform='macosx'
    brew install shc
 fi
-echo "Installing LightWeb in $platform ..."
+
 echo "____________________________________"
 echo " Downloading LightWeb ...      | ⬇️ |"
 curl "https://github.com/ruvenss/lightweb/archive/refs/heads/master.zip" -o lightweb.zip
