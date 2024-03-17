@@ -3,7 +3,6 @@ clear
 echo "Staging Domain:"
 read domain
 mkdir -p $domain
-
 platform='unknown'
 unamestr=$(uname)
 if [[ "$unamestr" == 'Linux' ]]; then
