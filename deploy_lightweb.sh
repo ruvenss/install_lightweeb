@@ -4,11 +4,7 @@ unamestr=$(uname)
 sudo clear
 if [[ "$unamestr" == 'Linux' ]]; then
    platform='linux'
-   sudo apt install -y shc > /dev/null
-   sudo apt install -y unzip > /dev/null
-   sudo apt install -y zip > /dev/null
-   sudo apt install -y apt-get install dialog > /dev/null
-   sudo apt install -y dialog > /dev/null
+   sudo apt install -y shc, unzip, zip, dialog > /dev/null
    clear
    domain=$(dialog --title 'LightWeb 3.0.0' --inputbox 'Enter your staging domain' 0 0  --output-fd 1)
     mkdir -p $domain;
