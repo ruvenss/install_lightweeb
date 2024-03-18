@@ -52,3 +52,4 @@ do
     sudo rm -f $domain/.gitignore
     sleep 1
 done|dialog --title "Grooming LightWeb ..." --gauge "Please wait ...." 10 60 90
+dialog --msgbox "Your LightWeb is ready to use" 0 0
