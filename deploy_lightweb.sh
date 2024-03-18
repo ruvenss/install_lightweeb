@@ -8,24 +8,24 @@ if [[ "$unamestr" == 'Linux' ]]; then
    clear
    domain=$(dialog --title 'LightWeb 3.0.0' --inputbox 'Enter your staging domain' 0 0  --output-fd 1)
     mkdir -p $domain;
-    echo -ne '#                         (0%  )\r'
+    echo -ne '#                         (  0%)\r'
     sleep 1
     wget -q https://github.com/ruvenss/lightweb/archive/refs/tags/3.0.0.zip -O "lightweb.zip"
-    echo -ne '#####                     (20% )\r'
+    echo -ne '#####                     ( 20%)\r'
     sleep 1
     unzip -qq ./"lightweb.zip" && rm ./"lightweb.zip"
-    echo -ne '###########               (40% )\r'
+    echo -ne '###########               ( 40%)\r'
     sleep 1
     sudo cp -aRf lightweb-3.0.0/. $domain
     sudo rm -rf lightweb-3.0.0
     chmod 777 $domain
-    echo -ne '#################         (60% )\r'
+    echo -ne '#################         ( 60%)\r'
     sleep 1
     sudo shc -f $domain/lightweb/ToProduction.sh $domain/lightweb/ToProduction
     sudo rm -f $domain/lightweb/ToProduction.sh
     sudo rm -f $domain/lightweb/ToProduction.sh.x.c
     sudo rm -f $domain/lightweb/ToProduction.sh.x
-    echo -ne '#######################   (90% )\r'
+    echo -ne '#######################   ( 90%)\r'
     sleep 1
     sudo rm -f $domain/.gitignore
     sudo chown -R www-data:www-data $domain
