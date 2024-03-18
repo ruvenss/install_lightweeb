@@ -17,7 +17,7 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
    brew list ncurses || brew install ncurses
    brew list dialog || brew install dialog
 fi
-domain=$"dialog --title 'LightWeb 3.0.0' --inputbox 'Enter your staging domain' 0 0"
+domain=$(dialog --title 'LightWeb 3.0.0' --inputbox 'Enter your staging domain' 25 25  --output-fd 1)
 mkdir -p $domain
 echo "Installing LightWeb in $platform ..."
 echo "____________________________________"
@@ -26,9 +26,11 @@ wget -q https://github.com/ruvenss/lightweb/archive/refs/tags/3.0.0.zip -O "ligh
 echo " Unzipping LightWeb ...        | 🗜️ |"
 echo " Deploying at $domain          | ⬆️ |"
 sudo cp -aRf lightweb-3.0.0/. $domain
-sudo mr -rf lightweb-3.0.0
+sudo rm -rf lightweb-3.0.0
 echo " Installing LightWeb ...       | ✅ |"
 chmod 777 $domain
 sudo shc -f $domain/lightweb/ToProduction.sh $domain/lightweb/ToProduction
 sudo rm -f $domain/lightweb/ToProduction.sh
-sudo rm -f $domain/lightweb/.gitignore
+sudo rm -f $domain/lightweb/ToProduction.sh.x.c
+sudo rm -f $domain/lightweb/ToProduction.sh.x
+sudo rm -f $domain/.gitignore
