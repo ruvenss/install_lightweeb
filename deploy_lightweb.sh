@@ -50,6 +50,15 @@ done|dialog --title "Compiling LightWeb ..." --gauge "Please wait ...." 10 60 60
 find 2>/dev/null |while read f;
 do
     sudo rm -f $domain/.gitignore
+    sudo chown -R www-data:www-data $domain
     sleep 1
 done|dialog --title "Grooming LightWeb ..." --gauge "Please wait ...." 10 60 90
+
 dialog --msgbox "Your LightWeb is ready to use at https://$domain" 0 0
+cd $domain
+cd lightweb
+mv config_sample.php config.php
+chown www-data:www-data config.php
+clear
+nano config.php
+
