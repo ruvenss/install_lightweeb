@@ -1,21 +1,24 @@
 #!/bin/bash
-clear
-echo "Staging Domain:"
-read domain
-mkdir -p $domain
 platform='unknown'
 unamestr=$(uname)
+sudo clear
 if [[ "$unamestr" == 'Linux' ]]; then
    platform='linux'
    sudo apt install -y shc > /dev/null
    sudo apt install -y unzip > /dev/null
    sudo apt install -y zip > /dev/null
+   sudo apt install -y apt-get install dialog > /dev/null
+   sudo apt install -y dialog > /dev/null
 elif [[ "$unamestr" == 'FreeBSD' ]]; then
    platform='freebsd'
 elif [[ "$unamestr" == 'Darwin' ]]; then
    platform='macosx'
-   brew install shc
+   brew list shc || brew install shc
+   brew list ncurses || brew install ncurses
+   brew list dialog || brew install dialog
 fi
+domain=$"dialog --title 'LightWeb 3.0.0' --inputbox 'Enter your staging domain' 0 0"
+mkdir -p $domain
 echo "Installing LightWeb in $platform ..."
 echo "____________________________________"
 echo " Downloading LightWeb ...      | ⬇️ |"
@@ -28,3 +31,4 @@ echo " Installing LightWeb ...       | ✅ |"
 chmod 777 $domain
 sudo shc -f $domain/lightweb/ToProduction.sh $domain/lightweb/ToProduction
 sudo rm -f $domain/lightweb/ToProduction.sh
+sudo rm -f $domain/lightweb/.gitignore
