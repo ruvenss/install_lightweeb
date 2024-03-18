@@ -85,4 +85,3 @@ mv config_sample.php config.php
 chown www-data:www-data config.php
 clear
 nano config.php
-
