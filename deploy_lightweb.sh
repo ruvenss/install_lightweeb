@@ -4,7 +4,17 @@ unamestr=$(uname)
 sudo clear
 if [[ "$unamestr" == 'Linux' ]]; then
    platform='linux'
-   sudo apt install -y shc, unzip, zip, dialog > /dev/null
+   echo "$platform OS Detected. Installing LightWeb for Debian like Distros"
+   sudo apt update
+   sudo apt upgrade -y
+   clear
+   sudo apt install -y shc 
+   clear
+   sudo apt install -y unzip
+   clear
+   sudo apt install -y zip
+   clear
+   sudo apt install -y dialog
    clear
    domain=$(dialog --title 'LightWeb 3.0.0' --inputbox 'Enter your staging domain' 0 0  --output-fd 1)
     mkdir -p $domain;
