@@ -16,18 +16,18 @@ if [[ "$unamestr" == 'Linux' ]]; then
    clear
    sudo apt install -y dialog
    clear
-   domain=$(dialog --title 'LightWeb 3.0.0' --inputbox 'Enter your staging domain' 0 0  --output-fd 1)
+   domain=$(dialog --title 'LightWeb 3.0.28' --inputbox 'Enter your staging domain' 0 0  --output-fd 1)
     mkdir -p $domain;
     echo -ne '#                         (  0%)\r'
     sleep 1
-    wget -q https://github.com/ruvenss/lightweb/archive/refs/tags/3.0.0.zip -O "lightweb.zip"
+    wget -q https://github.com/ruvenss/lightweb/archive/refs/tags/3.0.28.zip -O "lightweb.zip"
     echo -ne '#####                     ( 20%)\r'
     sleep 1
     unzip -qq ./"lightweb.zip" && rm ./"lightweb.zip"
     echo -ne '###########               ( 40%)\r'
     sleep 1
-    sudo cp -aRf lightweb-3.0.0/. $domain
-    sudo rm -rf lightweb-3.0.0
+    sudo cp -aRf lightweb-3.0.28/. $domain
+    sudo rm -rf lightweb-3.0.28
     chmod 777 $domain
     echo -ne '#################         ( 60%)\r'
     sleep 1
@@ -50,7 +50,7 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
    brew list ncurses || brew install ncurses
    brew list dialog || brew install dialog
    clear
-   domain=$(dialog --title 'LightWeb 3.0.0' --inputbox 'Enter your staging domain' 0 0  --output-fd 1)
+   domain=$(dialog --title 'LightWeb 3.0.28' --inputbox 'Enter your staging domain' 0 0  --output-fd 1)
     find 2>/dev/null |while read f;
     do
         mkdir -p $domain;
@@ -58,7 +58,7 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
     done|dialog --title "Installing LightWeb in $platform" --gauge "$domain ...." 10 60 0
     find 2>/dev/null |while read f;
     do
-        wget -q https://github.com/ruvenss/lightweb/archive/refs/tags/3.0.0.zip -O "lightweb.zip"
+        wget -q https://github.com/ruvenss/lightweb/archive/refs/tags/3.0.28.zip -O "lightweb.zip"
     done|dialog --title "Downloading LightWeb ..." --gauge "Please wait ...." 10 60 20
     find 2>/dev/null |while read f;
     do
@@ -67,8 +67,8 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
     done|dialog --title "Uncompressing LightWeb ..." --gauge "Please wait ...." 10 60 30
     find 2>/dev/null |while read f;
     do
-        sudo cp -aRf lightweb-3.0.0/. $domain
-        sudo rm -rf lightweb-3.0.0
+        sudo cp -aRf lightweb-3.0.28/. $domain
+        sudo rm -rf lightweb-3.0.28
         chmod 777 $domain
         sleep 1
     done|dialog --title "Installing LightWeb ..." --gauge "Please wait ...." 10 60 40
