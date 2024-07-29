@@ -29,7 +29,7 @@ if [[ "$unamestr" == 'Linux' ]]; then
     mkdir -p $domain;
     echo -ne '#                         (  0%)\r'
     sleep 1
-    wget -q https://github.com/ruvenss/lightweb/archive/refs/tags/3.0.28.zip -O "lightweeb.zip"
+    wget -q https://github.com/ruvenss/lightweb/archive/refs/tags/3.0.30.zip -O "lightweeb.zip"
     echo -ne '#####                     ( 20%)\r'
     sleep 1
     unzip -qq ./"lightweeb.zip" && rm ./"lightweeb.zip"
