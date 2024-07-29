@@ -112,5 +112,25 @@ sed -i -e "s/+1555555555/$telephone/g" config.php
 sed -i -e "s/1940b0/$background_color/g" config.php
 sed -i -e "s/ffffff/$theme_color/g" config.php
 chown www-data:www-data config.php
+cd pages
+mkdir home
+touch home/index.html
+mkdir gdpr
+touch gdpr/index.html
+mkdir 404
+touch 404/index.html
+mkdir contact
+touch contact/index.html
+mkdir products
+touch products/index.html
+mkdir aboutus
+touch aboutus/index.html
+mkdir subscribe
+touch subscribe/index.html
+cd ..
+touch footers/footer.html
+touch headers/header.html
+touch footers/footer_404.html
+touch headers/header_404.html
 clear
 nano config.php
