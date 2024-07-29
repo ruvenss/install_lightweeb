@@ -100,6 +100,7 @@ fi
 dialog --msgbox "Your LightWeb is ready to use at https://$domain" 0 0
 cd $domain
 cd lightweb
+chmod 777 ToProduction.sh
 mv config_sample.php config.php
 sed -i -e "s/My_secret_key/$token/g" config.php
 sed -i -e "s/stage.mydomain.com/$domain/g" config.php
