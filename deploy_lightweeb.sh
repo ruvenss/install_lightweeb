@@ -134,3 +134,4 @@ touch footers/footer_404.html
 touch headers/header_404.html
 clear
 nano config.php
+php autoupdate.php
