@@ -47,5 +47,22 @@
     "lostpwd":"Lost password",
     "recover":"Recover password",
     "passwdsent":"Your password has been sent to your email",
-    "copyright":"Copyright"
+    "copyright":"Copyright",
+    "up":"Up",
+    "down":"Down",
+    "readmore":"Read more...",
+    "connect":"Connect",
+    "logout":"Logout",
+    "reconnect":"Reconnect",
+    "welcome":"Welcome",
+    "support":"Support",
+    "help":"help",
+    "documentation":"Documentation",
+    "socialnetworks":"Social networks",
+    "address":"Address",
+    "invoices":"Invoices",
+    "billing":"Billing",
+    "pay":"Pay",
+    "subscribe":"subscribe",
+    "newsletter":"Newsletter"
 }
