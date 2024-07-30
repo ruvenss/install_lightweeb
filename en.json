@@ -34,7 +34,7 @@
     "country":"Country",
     "city":"City",
     "street":"Street",
-    "cp","Postal code:",
+    "cp","Postal code",
     "telephone":"Telephone",
     "learnmore":"Learn more",
     "ok":"OK",
@@ -46,5 +46,6 @@
     "loginwith":"Login with",
     "lostpwd":"Lost password",
     "recover":"Recover password",
-    "passwdsent":"Your password has been sent to your email"
+    "passwdsent":"Your password has been sent to your email",
+    "copyright":"Copyright"
 }
